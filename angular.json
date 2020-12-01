@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "uilib": {
+      "projectType": "library",
+      "root": "projects/uilib",
+      "sourceRoot": "projects/uilib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/uilib/tsconfig.lib.json",
+            "project": "projects/uilib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uilib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uilib/src/test.ts",
+            "tsConfig": "projects/uilib/tsconfig.spec.json",
+            "karmaConfig": "projects/uilib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uilib/tsconfig.lib.json",
+              "projects/uilib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "AngularLibrary"
