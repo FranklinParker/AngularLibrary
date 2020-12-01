@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-uilib',
-  template: `
-    <p>
-      uilib works!
-    </p>
-  `,
+  templateUrl: './uilib.component.html',
   styles: [
   ]
 })
