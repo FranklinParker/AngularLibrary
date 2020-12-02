@@ -3,16 +3,20 @@ import {UilibComponent} from './uilib.component';
 import {UilibRoutingModule} from './uilib-routing.module';
 import {CommonModule} from '@angular/common';
 import {UlibListComponent} from './ulib-list/ulib-list.component';
+import { TableDialogComponent } from './table-dialog/table-dialog.component';
+import { MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     UilibComponent,
-    UlibListComponent
+    UlibListComponent,
+    TableDialogComponent
   ],
   imports: [
     UilibRoutingModule,
-    CommonModule
+    CommonModule,
+    MatDialogModule
   ],
   exports: [
     UilibComponent,
