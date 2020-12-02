@@ -1,16 +1,23 @@
-import { NgModule } from '@angular/core';
-import { UilibComponent } from './uilib.component';
+import {NgModule} from '@angular/core';
+import {UilibComponent} from './uilib.component';
 import {UilibRoutingModule} from './uilib-routing.module';
 import {CommonModule} from '@angular/common';
-
+import {UlibListComponent} from './ulib-list/ulib-list.component';
 
 
 @NgModule({
-  declarations: [UilibComponent],
+  declarations: [
+    UilibComponent,
+    UlibListComponent
+  ],
   imports: [
     UilibRoutingModule,
     CommonModule
   ],
-  exports: [UilibComponent]
+  exports: [
+    UilibComponent,
+    UlibListComponent
+  ]
 })
-export class UilibModule { }
+export class UilibModule {
+}
