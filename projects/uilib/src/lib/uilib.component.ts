@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {UilibService} from './uilib.service';
+import {Observable, of} from 'rxjs';
+import {SystemAlert} from './model/SystemAlert';
 
 @Component({
   selector: 'lib-uilib',
@@ -7,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class UilibComponent implements OnInit {
-
-  constructor() { }
+  systemAlerts$: Observable<SystemAlert[]> = of();
+  constructor(private uilibService: UilibService) { }
 
   ngOnInit(): void {
-    alert('f');
+    this.systemAlerts$ = this.uilibService.getSystemAlerts();
   }
 
 }

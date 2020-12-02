@@ -1,3 +1,12 @@
 <div>
-  <h1>Ui Lib</h1>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>Message</th>
+    </tr>
+    <tr *ngFor="let systemAlert of (systemAlerts$|async)">
+      <td>{{systemAlert.id}}</td>
+      <td>{{systemAlert.message}}</td>
+    </tr>
+  </table>
 </div>
