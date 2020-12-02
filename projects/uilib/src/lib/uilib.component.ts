@@ -19,7 +19,9 @@ export class UilibComponent implements OnInit {
   ngOnInit(): void {
     this.systemAlerts$ = this.uilibService.getSystemAlerts();
     this.dialog.open(TableDialogComponent,{
-      data: 'test'
+      data: this.systemAlerts$,
+      width: '40%',
+      height: '50%'
     });
 
   }

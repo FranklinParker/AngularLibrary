@@ -1,1 +1,29 @@
-<p>table-dialog works!</p>
+<h2 mat-dialog-title>Confirm</h2>
+
+<mat-dialog-content>
+
+  <div>
+    <table>
+      <tr>
+        <th>id</th>
+        <th>Message</th>
+      </tr>
+      <tr *ngFor="let systemAlert of (systemAlerts$|async)">
+        <td>{{systemAlert.id}}</td>
+        <td>{{systemAlert.message}}</td>
+      </tr>
+    </table>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    mat-dialog-close="yes">Yes
+  </button>
+  <button mat-raised-button
+          color="warn"
+          mat-dialog-close="no">No
+  </button>
+</mat-dialog-actions>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {Observable, of} from 'rxjs';
+import { SystemAlert} from '../model/SystemAlert';
 
 @Component({
   selector: 'lib-table-dialog',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableDialogComponent implements OnInit {
 
-  constructor() { }
+  systemAlerts$: Observable<SystemAlert[]> = of();
+  constructor(public dialogRef: MatDialogRef<TableDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) data: Observable<SystemAlert[]> ) {
+    this.systemAlerts$ = data;
+  }
 
   ngOnInit(): void {
   }
