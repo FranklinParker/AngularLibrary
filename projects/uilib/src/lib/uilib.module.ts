@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import {UlibListComponent} from './ulib-list/ulib-list.component';
 import { TableDialogComponent } from './table-dialog/table-dialog.component';
 import { MatDialogModule} from '@angular/material/dialog';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MatDialogModule} from '@angular/material/dialog';
   imports: [
     UilibRoutingModule,
     CommonModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   exports: [
     UilibComponent,

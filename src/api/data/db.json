@@ -1,0 +1,6 @@
+{
+  "systemalerts": [
+    { "id": 1, "message": "message one" },
+    { "id": 2, "message": "message two" }
+  ]
+}
